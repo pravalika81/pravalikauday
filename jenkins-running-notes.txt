@@ -1,0 +1,32 @@
+jenkins d2
+==========
+1.how many freestyle jobs in jenkins?
+
+general,source code management,build trigger,build environment,build steps,post-build actions.
+
+2.colours?
+ 
+blue:its not running with the job and its waiting to running with the job
+
+green: job will be sucesses
+
+red: job failure
+
+3.how many types of build triggers?
+
+build trigger:to schedule the job
+
+5 types
+1.trigger build remotely
+
+2.build after other projects are built
+
+3.build periodically: Schedule our crontab job or to schedule the job
+
+4.github hook trigger for GITScm polling
+
+4.up stream and down stream?
+
+up stream will work for frestyle and down stream will work for pipeline execution.
+
+5.poll SCM
