@@ -1,0 +1,40 @@
+pipeline{
+    tools{
+        jdk 'myjava'
+        maven 'mygit'
+    }
+    agent any
+    stages{
+        stage('checkout'){
+            steps{
+            }
+        }
+        stage('compile'){
+            steps{
+                sh 'git compile'
+            }
+        }
+        stage('codeReview'){
+            steps{
+                
+            }
+        }
+        stage('unitTest'){
+            steps{
+                sh 'git test'
+            }
+        }
+        stage('metricCheck'){
+            steps{
+                
+            }
+        }
+        stage('package'){
+            steps{
+                
+            }
+            
+        }
+
+    }
+}
