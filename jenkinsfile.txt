@@ -1,0 +1,35 @@
+pipeline{
+ agent any
+  stages{
+   stage('checkout'){
+    steps{
+	 git
+	}
+   }
+   stage('compile'){
+    steps{
+	 sh 'mvn compile'
+	}
+   }
+   stage('code review'){
+    steps{
+     sh 'mvn pmd:pmd'
+    }
+   }
+   stage('unitTest'){
+    steps{
+     sh 'mvn test'
+    }
+   }
+   stage('matrixcheck'){
+    steps{   
+	 sh 'mvn cobertura:cobertura -Dcobertura.report.formate=xml'
+	}
+   }
+   stage('package'){
+    steps{
+	 sh 'mvn package'
+	}
+   }
+ }
+}
