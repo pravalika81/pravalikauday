@@ -1,0 +1,49 @@
+two - servers
+____________
+1.Server1 - Mumbai region - 2 volumes(Root & EBS Volume)
+2.serever2 - singapore - 1 volumes(root Volume)
+3. Clinets wants to move this EBS from mumbai to singapore(that is EBS Volume)(like from mumbai ec2 instance to singapore ec2 instance)
+
+Steps:
+----
+1.Detach ebs volume in mumbai
+2.Convert volume to snapshot
+3.And this snap shot we want to move from mumbai to singapore region
+Note - We cannot move volumes
+4.Go to snapshot in mumbai - click on action - click on copy - select destination location(singapore)
+now check in singapore region - under snap shot - its created
+5.snapshot(singapore)- action -action attach
+
+
+Snapshot means - convert volumes
+
+AMI
+_____
+
+AMI is nothing but os + on top of some set of s/w(like 5 s/w)
+Each AMI have 5 s/w installed
+
+
+
+Step1. convert that machine into AMI
+go to existing server - selct - action - create image - image name
+description
+click on create image1 - its ready
+- AMI's are specific to root volumes
+
+Clinet req wants duplicate in same mumbai region only
+------
+go to - mumbai region - launch instance - go to AMI - give our AMI
+
+If you want singapore:
+------------
+go to AMI - Actions copy from mumbai to singapore
+click on my ami IN SINGAPORE
+we can copy the AMI'S and Volumes also
+
+
+
+
+
+
+
